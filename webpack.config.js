@@ -18,8 +18,8 @@ const commonPlugins = [
   new webpack.optimize.LimitChunkCountPlugin({
     maxChunks: 1,
   }),
-  new HtmlWebpackPlugin({ template: 'ExSeSpecGen.html', filename: './ExSeSpecGen.html' }),
-  new HtmlWebpackPlugin({ template: 'ExSeSpecDoc.html', filename: './ExSeSpecDoc.html' }),
+  new HtmlWebpackPlugin({ template: 'ExSeSpecGen.html', filename: './ExSeSpecPDF.html' }),
+  new HtmlWebpackPlugin({ template: 'ExSeSpecDoc.html', filename: './__exsespecdoc.html' }),
   new CleanWebpackPlugin(),
   new webpack.BannerPlugin(BANNER),
   new webpack.DefinePlugin({ VERSION }),
