@@ -23,27 +23,41 @@ export function getInfoDef(spec, bookTitle, localize) {
     let contactUrl;
     let termsOfService;
 
+    spec.info.contact = {};
+    spec.info.contact.name = 'HKS Systeme GmbH';
+    spec.info.contact.email = 'info@hks-systeme.de';
+    spec.info.contact.url = 'www.hks-systeme.de';
+    spec.info.description = '';
+
     if (spec.info.contact) {
       if (spec.info.contact.name) {
-        contactName = { text: [{ text: `\n${localize.name}: `, style: ['b', 'small'] }, { text: spec.info.contact.name, style: ['small'] }] };
+        // contactName = { text: [{ text: `\n${localize.name}: `, style: ['b', 'small', 'right'] }, { text: spec.info.contact.name, style: ['small'] }] };
+        contactName = { text: [{ text: '\n', style: ['b', 'small', 'right'] }, { text: spec.info.contact.name, style: ['small', 'right'] }] };
       }
       if (spec.info.contact.email) {
-        contactEmail = { text: [{ text: `\n${localize.email}: `, style: ['b', 'small'] }, { text: spec.info.contact.email, style: ['small'] }] };
+        // contactEmail = { text: [{ text: `\n${localize.email}: `, style: ['b', 'small', 'right'] }, { text: spec.info.contact.email, style: ['small'] }] };
+        contactEmail = { text: [{ text: '\n', style: ['b', 'small', 'right'] }, { text: spec.info.contact.email, style: ['small', 'right'] }] };
       }
       if (spec.info.contact.url) {
-        contactUrl = { text: [{ text: `\n${localize.url}: `, style: ['b', 'small'] }, { text: spec.info.contact.url, style: ['small', 'blue'], link: spec.info.contact.url }] };
+        // contactUrl = { text: [{ text: `\n${localize.url}: `, style: ['b', 'small', 'right'] }, { text: spec.info.contact.url, style: ['small', 'blue'], link: spec.info.contact.url }] };
+        contactUrl = { text: [{ text: '\n', style: ['b', 'small', 'right'] }, { text: spec.info.contact.url, style: ['small', 'right'], link: spec.info.contact.url }] };
       }
       if (spec.info.termsOfService) {
-        termsOfService = { text: [{ text: `\n${localize.termsOfService}: `, style: ['b', 'small'] }, { text: spec.info.termsOfService, style: ['small', 'blue'], link: spec.info.termsOfService }] };
+        // termsOfService = { text: [{ text: `\n${localize.termsOfService}: `, style: ['b', 'small', 'right'] }, { text: spec.info.termsOfService, style: ['small', 'blue'], link: spec.info.termsOfService }] };
+        termsOfService = { text: [{ text: '\n', style: ['b', 'small', 'right'] }, { text: spec.info.termsOfService, style: ['small', 'right'], link: spec.info.termsOfService }] };
       }
+
+      const publishDate = { text: [{ text: `\n\n${new Date().toLocaleDateString('de-DE')}`, style: ['b', 'small', 'right'] }, { text: '', style: ['small', 'right'], link: spec.info.termsOfService }] };
       contactDef = [
-        { text: localize.contact, style: ['p', 'b', 'topMargin3'] },
+        // { text: localize.contact, style: ['p', 'b', 'topMargin3', 'right'] },
+        { text: '', style: ['p', 'b', 'topMargin3', 'right'] },
         {
           text: [
             contactName,
             contactEmail,
             contactUrl,
             termsOfService,
+            publishDate,
           ],
         },
       ];

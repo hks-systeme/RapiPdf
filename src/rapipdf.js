@@ -208,12 +208,12 @@ export default customElements.define('rapi-pdf', class RapiPdf extends HTMLEleme
     const pdfSortTags = this.getAttribute('pdf-sort-tags') !== 'false';
     const pdfPrimaryColor = this.getAttribute('pdf-primary-color');
     const pdfAlternateColor = this.getAttribute('pdf-alternate-color');
-    const pdfTitle = this.getAttribute('pdf-title') === null ? 'API Reference' : this.getAttribute('pdf-title');
+    const pdfTitle = this.getAttribute('pdf-title') === null ? 'ExSe API Reference' : this.getAttribute('pdf-title');
     const pdfCoverText = this.getAttribute('pdf-cover-text') ? this.getAttribute('pdf-cover-text') : '';
     const pdfSecurityText = this.getAttribute('pdf-security-text') ? this.getAttribute('pdf-security-text') : '';
     const pdfApiText = this.getAttribute('pdf-api-text') ? this.getAttribute('pdf-api-text') : '';
     const pdfSchemaStyle = this.getAttribute('pdf-schema-style') === 'table' ? 'table' : 'object';
-    const pdfFooterText = this.getAttribute('pdf-footer-text') ? this.getAttribute('pdf-footer-text') : '';
+    const pdfFooterText = this.getAttribute('pdf-footer-text') ? this.getAttribute('pdf-footer-text') : new Date().toLocaleDateString('de-DE');
     const includeInfo = this.getAttribute('include-info') !== 'false';
     const includeToc = this.getAttribute('include-toc') !== 'false';
     const includeSecurity = this.getAttribute('include-security') !== 'false';

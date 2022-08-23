@@ -83,8 +83,8 @@ export default async function createPdf(specUrl, options) {
       return {
         margin: 10,
         columns: [
-          { text: options.pdfFooterText, style: ['sub', 'gray', 'left'] },
-          { text: `${currentPage} of ${pageCount}`, style: ['sub', 'gray', 'right'] },
+          { text: `V${parsedSpec.info.version} - ${options.pdfFooterText}`, style: ['sub', 'gray', 'left'] },
+          { text: `${currentPage} / ${pageCount}`, style: ['sub', 'gray', 'right'] },
         ],
       };
     },

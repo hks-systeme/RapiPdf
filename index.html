@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
   <title>RapiPdf</title>
   <style>
+    body {
+      font-family:"Arial";
+    }
     rapi-pdf {
       margin:2px;
       width:600px;
     }
-  </style>  
+  </style>
 </head>
 
 <body>
-  <!-- 
+  <!--
     Some sample spec to try
     http://10.21.83.83:8080/api/swagger.json
     https://api.apis.guru/v2/specs/stripe.com/2019-08-14/swagger.json
@@ -22,27 +25,26 @@
     https://petstore.swagger.io/v2/swagger.json
     https://assets.zuora.com/zuora-documentation/swagger.yaml <<< Large spec with lot of markdown
   -->
+  <h1>HKS Systeme GmbH</h1>
+  <h2>Generate ExSe Specification</h2>
+  <rapi-pdf id='rapipdf' spec-url="http://localhost:31100/openapi" pdf-schema-style="table"> </rapi-pdf>
 
-  <!--
+<!--
   <rapi-pdf id='rapipdf' spec-url="./examples/specs/test.json" include-info="false" include-security="false" include-toc="false"> </rapi-pdf>
-  -->
-  <rapi-pdf id='rapipdf' spec-url="./specs/petstore.json" pdf-schema-style="table"> </rapi-pdf>
   <rapi-pdf id='rapipdf' spec-url="./specs/petstore.json" pdf-schema-style="object"> </rapi-pdf>
   <rapi-pdf id='rapipdf' spec-url="./specs/bitbucket.json"> </rapi-pdf>
   <rapi-pdf id='rapipdf' spec-url="./specs/data-types.yaml"> </rapi-pdf>
   <rapi-pdf id='rapipdf' spec-url="./specs/data-types.yaml" include-example="true", button-label="WITH EXAMPLE"> </rapi-pdf>
   <rapi-pdf id='rapipdf' spec-url="./specs/data-types.yaml" hide-input="true"> </rapi-pdf>
-  
 
   <button onclick="changeSpec()">Change Spec</button>
   <script type="text/javascript">
     function changeSpec(){
       let el = document.getElementById("rapipdf");
       el.setAttribute('spec-url', 'set new attrib');
-    } 
-  </script>  
-
-
+    }
+  </script>
+-->
 </body>
 
 </html>
