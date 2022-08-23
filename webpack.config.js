@@ -22,7 +22,7 @@ const commonPlugins = [
   new CleanWebpackPlugin(),
   new webpack.BannerPlugin(BANNER),
   new webpack.DefinePlugin({ VERSION }),
-  new CompressionPlugin(),
+  // new CompressionPlugin(),
   new FileManagerPlugin({
     onEnd: {
       copy: [

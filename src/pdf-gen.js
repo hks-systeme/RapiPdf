@@ -110,5 +110,6 @@ export default async function createPdf(specUrl, options) {
   };
   // pdfMake.vfs = pdfFonts.pdfMake.vfs;
   pdfMake.vfs = pdfFonts;
-  pdfMake.createPdf(finalDocDef).open();
+  // pdfMake.createPdf(finalDocDef).open();
+  pdfMake.createPdf(finalDocDef).download(`ExSe Specification V${parsedSpec.info.version}.pdf`);
 }
