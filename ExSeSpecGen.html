@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="de" xmlns="http://www.w3.org/1999/html">
 
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
-  <title>RapiPdf</title>
+  <title>ExSeSpecGen</title>
   <style>
     body {
       font-family:"Arial";
@@ -25,16 +25,19 @@
     https://petstore.swagger.io/v2/swagger.json
     https://assets.zuora.com/zuora-documentation/swagger.yaml <<< Large spec with lot of markdown
   -->
-  <h1>HKS Systeme GmbH</h1>
-  <h2>Generate ExSe Specification</h2>
-  <h3>Enter the address of a running ExSe instance</h3>
-  <rapi-pdf id='rapipdf' spec-url="http://localhost:31100/openapi" pdf-schema-style="table"> </rapi-pdf>
-  (Generating from a .json file is currently not supported.)
+  <h1 style="padding-top: 5%">HKS Systeme GmbH</h1>
+  <div id="rapi-pdf">
+    <h2>Generate ExSe Specification</h2>
+    <h3>Enter the address of a running ExSe instance</h3>
+    <rapi-pdf spec-url="http://localhost:31100/openapi" pdf-schema-style="table"> </rapi-pdf>
+    (Generating from a .json file is currently not supported.)
+  </div>
+
+  </br>
+  <a href="./ExSeSpecDoc.html" target="_blank">Explore your ExSe online</a>
 <!--
   <rapi-pdf id='rapipdf' spec-url="./examples/specs/test.json" include-info="false" include-security="false" include-toc="false"> </rapi-pdf>
   <rapi-pdf id='rapipdf' spec-url="./specs/petstore.json" pdf-schema-style="object"> </rapi-pdf>
-  <rapi-pdf id='rapipdf' spec-url="./specs/bitbucket.json"> </rapi-pdf>
-  <rapi-pdf id='rapipdf' spec-url="./specs/data-types.yaml"> </rapi-pdf>
   <rapi-pdf id='rapipdf' spec-url="./specs/data-types.yaml" include-example="true", button-label="WITH EXAMPLE"> </rapi-pdf>
   <rapi-pdf id='rapipdf' spec-url="./specs/data-types.yaml" hide-input="true"> </rapi-pdf>
 

@@ -19,6 +19,7 @@ const commonPlugins = [
     maxChunks: 1,
   }),
   new HtmlWebpackPlugin({ template: 'ExSeSpecGen.html', filename: './ExSeSpecGen.html' }),
+  new HtmlWebpackPlugin({ template: 'ExSeSpecDoc.html', filename: './ExSeSpecDoc.html' }),
   new CleanWebpackPlugin(),
   new webpack.BannerPlugin(BANNER),
   new webpack.DefinePlugin({ VERSION }),
